@@ -24,8 +24,11 @@ func main () {
 
 	//handlers
 	router.HandleFunc("/beer", getBeers).Methods("GET")
-	router.HandleFunc("/sushi/{id}", getBeer).Methods("GET")
-	router.HandleFunc("/sushi/", createBeer).Methods("POST")
+	router.HandleFunc("/beer/{id}", getBeer).Methods("GET")
+	router.HandleFunc("/beer", createBeer).Methods("POST")
+	router.HandleFunc("beer/{id}", updateBeer).Methods("POST")
+	router.HandleFunc("beer/{id}", deleteBeer).Methods("POST")
+
 
 
 }
