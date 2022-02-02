@@ -18,6 +18,25 @@ type Beer struct {
 
 var beers []Beer
 
+func getBeers(w http.ResponseWriter, r *http.Request) {
+
+}
+func getBeer(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func createBeer(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func updateBeer(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func deleteBeer(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func main () {
 
 	router := mux.NewRouter()
@@ -27,7 +46,10 @@ func main () {
 	router.HandleFunc("/beer/{id}", getBeer).Methods("GET")
 	router.HandleFunc("/beer", createBeer).Methods("POST")
 	router.HandleFunc("beer/{id}", updateBeer).Methods("POST")
-	router.HandleFunc("beer/{id}", deleteBeer).Methods("POST")
+	router.HandleFunc("beer/{id}", deleteBeer).Methods("DELETE")
+
+	http.ListenAndServe(":4003", router)
+	log.Fatal(http.ListenAndServe(":4003", router))
 
 
 
